@@ -1,0 +1,101 @@
+version: "3.1"
+
+stories:
+
+# - story: happy path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_great
+#   - action: utter_happy
+
+# - story: sad path 1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
+
+# - story: sad path 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_goodbye
+
+- story: beginning of flow
+  steps:
+  - intent: greet
+  - action: utter_ask_user_question
+  - checkpoint: check_asked_question
+
+- story: next of flow
+  steps:
+  - checkpoint: check_asked_question_next
+  - action: utter_ask_user_question
+  - checkpoint: check_asked_question
+  
+
+- story: handle user affirm
+  steps:
+  - checkpoint: check_asked_question
+  - intent: affirm
+  - action: utter_ask_username
+  - intent: input_username
+  - slot_was_set:
+    - user_name: user_name
+  - action: initializing_user
+  - action: utter_ask_todo
+  # - checkpoint: check_affirm
+
+- story: handle user deny
+  steps:
+  - checkpoint: check_asked_question
+  - intent: deny
+  # - intent: goodbye
+  - action: utter_goodbye  
+
+
+- story: Information about activities
+  steps:
+  # - checkpoint: check_affirm
+  - intent: query_activity_information
+  - action: utter_ask_activity_name
+  - intent: check_activity_infor
+  - slot_was_set:
+    - activity_name: activity
+  - action: action_activity_information
+  - checkpoint: check_asked_question_next
+
+- story: what can bot do
+  steps:
+  # - checkpoint: check_affirm
+  # - action: utter_ask_todo
+  - intent: ask_what_can_do
+  - action: utter_can_do
+  - checkpoint: check_asked_question_next
+
+
+
+- story: list all activity
+  steps:
+  - intent: ask_to_get_allactivity
+  - action: action_activity_list
+  - checkpoint: check_asked_question_next
+
+- story: book tickets
+  steps:
+  - intent: book_activity
+  # - action: ask_actname_wana_book
+  - action: utter_ask_activity_name
+  - intent: check_activity_infor
+  - slot_was_set:
+    - activity_name: activity
+  - action: action_book_activity
+  - checkpoint: check_asked_question_next

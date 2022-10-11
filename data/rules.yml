@@ -1,0 +1,40 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Dirty word
+  steps:
+  - intent: dirty_word
+  - action: utter_goodbye
+
+# - rule: login/register
+#   steps:
+#   # - intent: greet
+#   # - action: utter_ask_user_question
+#   # - intent: affirm
+#   - action: utter_ask_username
+#   - intent: input_username
+#   - slot_was_set:
+#     - user_name: user_name
+#   - action: initializing_user
+#   # - checkpoint: check_affirm
+
+
+
+# - rule: Information about activities(rule)
+#   steps:
+#   # - action: utter_ask_todo
+#   - intent: check_activity_infor
+#   - slot_was_set:
+#     - activity_name: activity
+#   - action: action_activity_information

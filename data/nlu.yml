@@ -1,0 +1,159 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: check_activity_infor
+  examples: |
+    - I want to know more about [AAActivity](activity) activity
+    - I want to know more about [Aasdkjhtivity](activity) activity
+    - I want to know [Aasdgakjshdty](activity) activity
+    - I want to know [AAActivity](activity) activity
+    - I'd like to know more about [AAActivity](activity) activity
+    - I'd like to know [AAActivity](activity) activity
+- intent: ask_what_can_do
+  examples: |
+    - what can you do?
+    - what can you do
+    - What can you do?
+    - What can you do
+    - you can?
+    - What are your functions?
+    - What can you do for me?
+    - what can bot do
+- intent: dirty_word
+  examples: |
+    - fuck you
+    - you mother fucker
+    - go fuck yourself
+    - you son of a bitch
+    - kiss your ass
+- intent: input_username
+  examples: |
+    - my name is [Spideybw](user_name)
+    - my name is [ybww](user_name)
+    - my name is [Ssfakjheybw](user_name)
+    - my name is [yyy](user_name)
+    - my name is [Tian](user_name)
+    - my name is [Spidey](user_name)
+    - my name is [Ray](user_name)
+    - Im [Spideybw](user_name)
+    - I am [Spideybw](user_name)
+    - I am [yyy](user_name)
+    - I am [Ray](user_name)
+    - I am [Spidey](user_name)
+    - I'm [Spideybw](user_name)
+    - I'm [Ray](user_name)
+    - I'm [Spidey](user_name)
+    - I'm [yyy](user_name)
+    - [Spideybw](user_name)
+    - [Ray](user_name)
+    - [Spidey](user_name)
+    - [yyy](user_name)
+    - [ybww](user_name)
+
+- intent: query_activity_information
+  examples: |
+    - Information about activities
+    - query activity information
+
+
+- intent: ask_to_get_allactivity
+  examples: |
+    - I'd like to know what's happening now
+    - I'd like to know what the activities are
+    - Informed of all activities
+    - List of activities
+
+- intent: book_activity
+  examples: |
+    - I'd like to book an activity
+    - I want to book an activity
+    - Booking activities
+
+
+- synonym: activity
+  examples: |
+    - event
+    - special event
+
+

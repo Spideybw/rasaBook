@@ -122,3 +122,28 @@ class bookActivity(Action):
 
         return []
 
+class bookList(Action):
+
+    def name(self) -> Text:
+        return "action_book_list"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        user_name =  tracker.get_slot("user_name")  
+        print(user_name)
+        c = conn.cursor()   
+        c.execute("SELECT * FROM book WHERE user_name = ?",(user_name,))
+        result = c.fetchall()
+        print(result[0])
+        res = "your book list:"
+
+        for re in result:  
+            res = res + "\n" + "id:" + str(re[0]) + "   activity:" +  str(re[1])
+
+        print(res)
+        dispatcher.utter_message(text=res)
+        c.close()
+
+        return []
+

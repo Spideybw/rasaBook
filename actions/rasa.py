@@ -43,12 +43,22 @@ import sqlite3
 #         # dispatcher.utter_message(text="Hello World!")
 
 #         # return []
+# conn = sqlite3.connect('rasa.db')
+# c = conn.cursor()   
+# c.execute("SELECT * FROM book WHERE user_name = ?",("Spideybw",))
+# result = c.fetchall()
+# print(result[0])
+# res = "your book list:"
 
-conn = sqlite3.connect('rasa.db')
-c = conn.cursor()   
-c.execute("INSERT INTO book(activity_name,user_name) VALUES(?,?)",("AAActivity","ybw"))
-print(1)
-conn.commit()
+# for re in result:  
+#     res = res + "\n" + "id:" + str(re[0]) + "   activity:" +  str(re[1])
+
+# print(res)        
+
+# c = conn.cursor()   
+# c.execute("INSERT INTO book(activity_name,user_name) VALUES(?,?)",("AAActivity","ybw"))
+# print(1)
+# conn.commit()
 # result = c.fetchall()
 # print(result[0])
 # res = "activity name list:"

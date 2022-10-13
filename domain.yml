@@ -14,11 +14,13 @@ intents:
   - query_activity_information
   - ask_to_get_allactivity
   - book_activity
+  - search_book
 actions:
   - action_activity_information
   - initializing_user
   - action_activity_list
   - action_book_activity
+  - action_book_list
 
 slots:
   activity_name:
@@ -59,12 +61,17 @@ responses:
       payload: "/book_activity"
     - title: what can you do?
       payload: "/ask_what_can_do"
+    - title: Query all Reservations
+      payload: "/search_book"
   utter_can_do:
   - text: I can find information about the event and book tickets for you :)
   utter_ask_username:
   - text: what's your name
   utter_ask_activity_name:
   - text: What is the name of the event you want to know about?
+  utter_ask_activityname_book:
+  - text: What's the name of the activity you want to book? 
+
   
 session_config:
   session_expiration_time: 60

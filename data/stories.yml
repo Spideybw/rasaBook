@@ -93,9 +93,16 @@ stories:
   steps:
   - intent: book_activity
   # - action: ask_actname_wana_book
-  - action: utter_ask_activity_name
+  - action: utter_ask_activityname_book
   - intent: check_activity_infor
   - slot_was_set:
     - activity_name: activity
   - action: action_book_activity
+  - checkpoint: check_asked_question_next
+
+
+- story: search tickets
+  steps:
+  - intent: search_book
+  - action: action_book_list
   - checkpoint: check_asked_question_next
